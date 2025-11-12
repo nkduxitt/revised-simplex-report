@@ -1,54 +1,53 @@
 # Revised Simplex Method for Solving Linear Programming Problems
 
-This repository presents a scientific study and implementation of the **Revised Simplex Method**, an efficient variant of the classical Simplex Algorithm for solving **Linear Programming Problems (LPP)**. The project includes a complete LaTeX report, Python implementation, worked examples, and a comparison with SciPy’s built-in solver.
+This repository contains a scientific study and LaTeX report on the **Revised Simplex Method**, an efficient variant of the classical Simplex Algorithm for solving **Linear Programming Problems (LPP)**. It includes a complete report, experimental results, and comparison with SciPy’s HiGHS solver.
 
 ---
 
 ## Project Structure
 
 ```
-project/
+
+revised-simplex-report/
 │
-├─ main.tex                     # Main LaTeX file (entry point)
-│
-├─ 01_motivation.tex            # Motivation / Introduction
-├─ 02_theory.tex                # Mathematical formulation
-├─ 03_algorithm.tex             # Pseudocode and method description
-├─ 04_implementation.tex        # Implementation notes and Python skeleton
-├─ 05_examples.tex              # Solved examples and experiments
-├─ 06_comparison.tex            # Comparison with SciPy solver
-├─ 07_conclusion.tex            # Final discussion and summary
-│
-├─ code/
-│   └─ revised_simplex.py       # Python implementation of the Revised Simplex
-│
-├─ results/
-│   ├─ example_output.txt       # Example iteration logs
-│   └─ comparison.csv           # Benchmark comparison with SciPy
-│
-├─ images/                      # Figures and diagrams
-│   └─ flowchart.png
-│
-├─ refs.bib                     # BibTeX references
-├─ requirements.txt             # Python dependencies
-└─ README.md                    # Project documentation
-```
+├── main.tex                         # Main LaTeX file
+├── output/                          # Compiled output files
+│   └── revised_simplex_report.pdf   # Compiled PDF report
+├── bib/
+│   └── references.bib               # BibTeX references
+├── code/
+│   ├── revised_simplex.py           # Python implementation of the Revised Simplex
+│   └── run_experiments.py           # Benchmark script for test problems
+├── results/                         # Per-run JSON logs and aggregated CSV
+│   ├── example1_revised_run*.json
+│   ├── example1_scipy_run.json
+│   ├── example2_phaseI_revised_run*.json
+│   ├── example2_phaseI_scipy_run.json
+│   └── summary.csv
+├── LICENSE                           # CC BY-SA 4.0 license
+├── README.md                         # Project documentation
+├── requirements.txt                  # Python dependencies
+├── .gitignore                         # Git ignore file
+├── all_results.txt                    # Optional raw results (ignored by Git)
+└── all_results2.txt                   # Optional raw results (ignored by Git)
+
+````
 
 ---
 
 ## Report Overview
 
-The LaTeX report is structured into seven chapters:
+The LaTeX report (`main.tex`) is structured as follows:
 
-| Chapter        | Description                                                                                                                            |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Motivation     | Explains the need for the Revised Simplex Method and its advantages over the classical tableau approach.                               |
-| Theory         | Formulates the linear programming problem, defines basis matrices, reduced costs, and optimality conditions.                           |
-| Algorithm      | Presents detailed pseudocode for Phase I and Phase II of the Revised Simplex method, including pivot selection and feasibility checks. |
-| Implementation | Discusses implementation choices, numerical safeguards, and data structures in Python.                                                 |
-| Examples       | Provides worked examples for regular, two-phase, and special-case LP problems.                                                         |
-| Comparison     | Compares the custom implementation with SciPy’s `linprog` in terms of runtime, accuracy, and feasibility.                              |
-| Conclusion     | Summarizes the study and suggests extensions for large-scale or sparse LP problems.                                                    |
+| Chapter             | Description                                                                 |
+| ------------------- | --------------------------------------------------------------------------- |
+| Motivation          | Explains the need for the Revised Simplex Method and its advantages.        |
+| Theory              | Mathematical formulation, basis matrices, reduced costs, and optimality.    |
+| Algorithm           | Pseudocode for Phase I and Phase II, pivot selection, feasibility checks.   |
+| Implementation      | Notes on Python implementation, numerical safeguards, and data structures. |
+| Examples            | Worked examples for regular, two-phase, and special-case LP problems.       |
+| Comparison          | Performance and accuracy comparison with SciPy’s HiGHS solver.             |
+| Conclusion          | Summary of findings and suggested extensions.                               |
 
 ---
 
@@ -56,126 +55,71 @@ The LaTeX report is structured into seven chapters:
 
 ### LaTeX
 
-To compile the report, ensure a LaTeX environment with the following packages:
+To compile the report locally, ensure the following packages are installed:
 
 * `amsmath`, `amssymb`, `graphicx`, `geometry`, `algorithm`, `algpseudocode`, `booktabs`, `hyperref`
 
 ### Python
 
-The implementation requires:
-
 * Python 3.9 or higher
 * `numpy`
 * `scipy`
-* `pandas` (optional, for data comparison)
+* `pandas` (optional, for data handling)
 
 Install dependencies using:
 
 ```bash
 pip install -r requirements.txt
-```
+````
 
 ---
 
 ## Compiling the Report
 
-### Overleaf
-
-1. Upload all `.tex` files, the `code/` folder, and `refs.bib`.
-2. Open `main.tex`.
-3. Click **Recompile** to produce `main.pdf`.
-
 ### Local Compilation
 
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex -output-directory=output -jobname=revised_simplex_report main.tex
+biber output/revised_simplex_report
+pdflatex -output-directory=output -jobname=revised_simplex_report main.tex
+pdflatex -output-directory=output -jobname=revised_simplex_report main.tex
 ```
 
-The output file will be `main.pdf`.
+The resulting PDF will be located at:
+
+```
+output/revised_simplex_report.pdf
+```
+
+### Overleaf
+
+Upload all `.tex` files, the `bib/` folder, and `code/` folder. Open `main.tex` and recompile to produce the PDF.
 
 ---
 
-## Python Implementation 
+## Results
 
-The `revised_simplex.py` module contains a functional Python implementation of the Revised Simplex algorithm. Example usage:
+The `results/` folder contains:
 
-```python
-import numpy as np
-from revised_simplex import RevisedSimplex
+* JSON logs for each run (`example1_revised_run*.json`, `example2_phaseI_revised_run*.json`, etc.)
+* Aggregated summary CSV (`summary.csv`) used for tables and figures in the report
 
-A = np.array([[1, 1, 1, 0],
-              [1, 3, 0, 1]], dtype=float)
-b = np.array([4, 6], dtype=float)
-c = np.array([3, 2, 0, 0], dtype=float)
-B_init = [2, 3]  # slack variables
+The report includes a detailed comparison with SciPy’s HiGHS solver in terms of:
 
-solver = RevisedSimplex(A, b, c, B_init)
-
-while True:
-    status = solver.iterate()
-    if status != 'continue':
-        print("Status:", status)
-        break
-```
-
-Expected output for the example:
-
-```
-optimal
-```
-
----
-
-## Comparison with SciPy
-
-To verify results against SciPy:
-
-```python
-from scipy.optimize import linprog
-
-res = linprog(-c, A_ub=A, b_ub=b, method='highs')
-print(res.x, -res.fun)
-```
-
-| Problem   | Method          | Optimal Value | Feasibility | Notes                |
-| --------- | --------------- | ------------- | ----------- | -------------------- |
-| Example 1 | Revised Simplex | 10.0          | Feasible    | Matches SciPy result |
-| Example 1 | SciPy (HiGHS)   | 10.0          | Feasible    | Faster runtime       |
-| Example 2 | Revised Simplex | TBD           | Feasible    | Phase I test         |
-| Example 2 | SciPy           | TBD           | Feasible    | Reference            |
-
----
-
-## Extending the Project
-
-Potential extensions include:
-
-* Implementing full Phase I–Phase II procedure for infeasible LPs
-* Integrating LU factorization updates for improved performance
-* Testing large-scale or sparse LP problems
-* Comparing with industrial solvers (Gurobi, CPLEX)
+* Objective value correctness
+* Feasibility residuals
+* Iterations/pivots and basis diagnostics
+* Timing and performance
 
 ---
 
 ## Authors
 
-* **Omar Hazem Ahmed** — Zewail City, Department of CSAI
 * **Amr Yasser Anwar** — Zewail City, Department of CSAI
-
----
-
-## References
-
-1. Dantzig, G. B., *Linear Programming and Extensions*, Princeton University Press, 1963.
-2. Chvátal, V., *Linear Programming*, W. H. Freeman, 1983.
-3. Hall, J. A. J., “HiGHS: A high-performance linear optimization solver,” University of Edinburgh, 2020.
+* **Omar Hazem Ahmed** — Zewail City, Department of CSAI
 
 ---
 
 ## License
 
-This project is intended for **educational and academic purposes**. Proper citation is required for use in research or coursework.
-
+This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
