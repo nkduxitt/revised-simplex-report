@@ -1,0 +1,16 @@
+{
+  "scipy": {
+    "status": "success",
+    "x": [
+      3.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "objective": 0.0,
+    "iterations": 2,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  }
+}
