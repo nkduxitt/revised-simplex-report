@@ -27,9 +27,7 @@ revised-simplex-report/
 ├── LICENSE                           # CC BY-SA 4.0 license
 ├── README.md                         # Project documentation
 ├── requirements.txt                  # Python dependencies
-├── .gitignore                         # Git ignore file
-├── all_results.txt                    # Optional raw results (ignored by Git)
-└── all_results2.txt                   # Optional raw results (ignored by Git)
+└── .gitignore                         # Git ignore file
 
 ````
 
