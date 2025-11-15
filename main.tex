@@ -1,4 +1,4 @@
-% main.tex
+% main.tex (revised preamble; body preserved)
 \documentclass[11pt,a4paper]{article}
 
 % -------------------------
@@ -10,12 +10,12 @@
 \addbibresource{bib/references.bib} % adjust path to your .bib file (repo: bib/references.bib)
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{microtype}       % improved typography
 \usepackage{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{hyperref}
 \usepackage{caption}
 \usepackage{enumitem}
 \usepackage{float}
@@ -23,6 +23,9 @@
 \usepackage{algpseudocode}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}        % smarter cross-references
+\usepackage{siunitx}         % aligned numeric columns in tables (optional use)
 
 \geometry{margin=1in}
 \hypersetup{
@@ -52,7 +55,7 @@
 \newcommand{\TODO}[1]{{\color{red}[TODO: #1]}}
 
 % -------------------------
-% Listings (Python)
+% Listings (Python) - improved settings
 % -------------------------
 \lstset{
   language=Python,
@@ -60,9 +63,11 @@
   numbers=left,
   numberstyle=\tiny,
   breaklines=true,
+  breakatwhitespace=true,
   frame=single,
   backgroundcolor=\color{gray!6},
-  showstringspaces=false
+  showstringspaces=false,
+  literate={_}{{\_}}1
 }
 
 % -------------------------
@@ -74,11 +79,23 @@
     \and 
     Omar Hazem Ahmed\thanks{Dept. of CSAI, Zewail City, University of Science and Technology, Egypt.}
 }
-\date{\today\thanks{This work is licensed under a 
-\href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License}.}}
+\date{\today}
+
+% small utility for a license footnote after title (safer than \thanks in \date)
+\makeatletter
+\newcommand\blfootnote[1]{%
+  \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\makeatother
 
 \begin{document}
 \maketitle
+
+% Put license as an unnumbered footnote (moved out of \date)
+\blfootnote{This work is licensed under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License}.}
 
 \begin{abstract}
 This report studies the \emph{Revised Simplex Method} for linear programming.
@@ -703,5 +720,3 @@ This work is licensed under a
 \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License}.
 
 \end{document}
-
-
